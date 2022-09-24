@@ -1,4 +1,4 @@
-package com.like.lion1;
+package com.like.lion1.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -33,7 +33,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "write";
 	}
 	
 }
