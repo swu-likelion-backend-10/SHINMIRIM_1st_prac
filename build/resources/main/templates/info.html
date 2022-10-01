@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자기소개</title>
+</head>
+<body>
+<form action="/writeInfo" method="post">
+    <div>
+        <span>이름: </span>
+        <input th:type="text" th:name="name"/>
+    </div>
+    <div>
+        <span>나이: </span>
+        <input th:type="text" th:name="age"/>
+    </div>
+    <div>
+        <span>전공: </span>
+        <input th:type="text" th:name="major"/>
+    </div>
+    <div>
+        <span>자기소개: </span>
+        <textarea th:name="info"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="제출"/>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>자기소개 목록</title>
+</head>
+<body>
+<a th:href="@{/info}">자기소개 작성</a>
+<form method="get" th:action="@{/search}">
+    <input type="text" name="keyword" placeholder="검색어를 입력해주세요">
+    <input type="submit" value="검색">
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>작성일</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="member : ${memberList}">
+        <td>
+            <span th:text="${member.id}"></span>
+        </td>
+        <td>
+            <a th:href="@{'/post/' + ${member.id}}">
+                <span th:text="${member.name}"></span>
+            </a>
+        </td>
+        <td>
+            <span th:text="${#temporals.format(member.createdTime, 'yyyy-MM-dd HH:mm')}"></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
